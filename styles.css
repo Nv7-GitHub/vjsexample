@@ -1,0 +1,26 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.styledBtn {
+  border: none;
+  background-color: #20bcd5;
+  font-size: 1.5em;
+  padding: 0.5em 1.5em;
+  border-radius: 50vw;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  position: fixed;
+  transition-duration: 0.5s;
+}
+
+.styledBtn:hover {
+  background-color: #00ffff;
+}
+
+.styledBtn:active {
+  transform: translateX(-50%) translateY(0);
+  background-color: #00ff00;
+}
