@@ -4,11 +4,17 @@
 
 sh build.sh
 v run devserver/devserver.v &
-
-reflex -r 'main.v' sh build.sh
+PID1=$!
+v -prod -skip-unused -o main.js -b js -watch . &
+PID2=$!
 
 cleanup() {
   echo "Cleaning up..."
-  kill %1
+  kill -9 $PID1
+  kill -9 $PID2
+  kill -9 $(( $PID2 + 10 ))
+  exit
 }
-trap cleanup EXIT
+trap cleanup INT
+
+reflex -r 'styles.css' sh styles.sh
