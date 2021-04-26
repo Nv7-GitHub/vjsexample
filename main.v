@@ -13,6 +13,7 @@ fn main() {
 	
 	el.addEventListener("click", fn() {
 		val := el.style.getPropertyValue("left")
+		// It seems that the JS backend currently doesn't support match statements. Use a match statement once it is supported.
 		if val == "" {
 			el.style.setProperty("left", "calc(100% - 5em)")
 			return
